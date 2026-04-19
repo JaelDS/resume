@@ -31,7 +31,7 @@
 
 // Professional header like the reference image
 #align(left)[
-  #text(size: 36pt, weight: "bold")[Jose Antonio]
+  #text(size: 36pt, weight: "bold")[ Antonio]
   #text(size: 30pt, weight: "light")[Escalante Lopez]
   #v(8pt)
   #text(size: 11pt, weight: "bold", fill: gray)[DATA ENGINEER & CYBERSECURITY DEVELOPER]
