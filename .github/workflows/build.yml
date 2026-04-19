@@ -1,0 +1,23 @@
+name: Build Typst Resume
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile Typst
+        uses: typst-community/setup-typst@v3
+
+      - name: Build PDF
+        run: typst compile resume.typ resume.pdf
+
+      - name: Commit PDF back to repo
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-build resume PDF"
+          file_pattern: resume.pdf
