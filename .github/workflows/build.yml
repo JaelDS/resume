@@ -10,14 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Compile Typst
+      - name: Setup Typst
         uses: typst-community/setup-typst@v3
 
       - name: Build PDF
-        run: typst compile resume.typ resume.pdf
+        run: typst compile doc/main.typ doc/resume_jael_IT.pdf
 
       - name: Commit PDF back to repo
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Auto-build resume PDF"
-          file_pattern: resume.pdf
+          file_pattern: doc/resume_jael_IT.pdf
